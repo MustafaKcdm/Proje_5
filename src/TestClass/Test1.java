@@ -58,6 +58,7 @@ public class Test1 {
         Assert.assertEquals("David",housePrices.getUsername());
 
         int total = housePrices.getPriceTotal();
+
         int eachMonth = housePrices.getPriceEachMonth();
 
         Assert.assertEquals("Result should be 120000 but your result is " + total, 120000, total);
