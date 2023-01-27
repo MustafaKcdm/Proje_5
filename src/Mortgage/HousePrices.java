@@ -84,13 +84,19 @@ public class HousePrices extends Users {
     // -> Method
     public void roomCountToPrice(){
         this.price =0;
-        switch (getRoomCount()){
-            case 0: this.price += 10000;
-            case 1: this.price += 20000;
-            case 2: this.price += 30000;
-            case 3: this.price += 40000;
-            case 4: this.price += 50000;
-            case 5: this.price += 60000;
+        switch (getRoomCount()) {
+            case 0 : this.price += 10000;
+            break;
+            case 1 : this.price += 20000;
+                break;
+            case 2 : this.price += 30000;
+                break;
+            case 3 : this.price += 40000;
+                break;
+            case 4 : this.price += 50000;
+                break;
+            case 5 : this.price += 60000;
+                break;
         }
     }
     //--------------------------------------------------------------
@@ -117,9 +123,13 @@ public class HousePrices extends Users {
     public void conditionToPrice(){
         switch (this.getWhichCondtiton()){
             case "new" : this.price+=50000;
-            case "like new" : this.price+=40000;
-            case "old" : this.price += 30000;
-            case "renew required" : this.price += 15000;
+            break;
+            case "LikeNew" : this.price+=40000;
+            break;
+            case "Old" : this.price += 30000;
+            break;
+            case "Renew Required" : this.price += 15000;
+            break;
         }
 
 
@@ -144,9 +154,12 @@ public class HousePrices extends Users {
     // -> Method
     public void houseTypeToPrice(){
         switch (this.getHouseType()){
-            case "apartment" : this.price += 20000;
+            case "Apartment" : this.price += 20000;
+            break;
             case "condo" : this.price += 30000;
-            case "house" : this.price += 40000;
+            break;
+            case "House" : this.price += 40000;
+            break;
         }
 
     }
@@ -206,10 +219,9 @@ public class HousePrices extends Users {
     // -> Method
 
     public int getPriceEachMonth(){
-        int aylikUcret;
-        aylikUcret = (price-getDownPayment())/getLongTerm();
+       int total = this.price-this.getDownPayment();
 
-        return aylikUcret;
+        return total/getLongTerm();
     }
     //--------------------------------------------------------------
 
